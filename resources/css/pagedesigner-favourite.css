@@ -1,0 +1,13 @@
+.gjs-am-favourite{
+  cursor: pointer;
+  position: absolute;
+  left: 7px;
+  top: 11px;
+  height: 5px;
+  line-height: 1;
+  opacity: 0.3;
+}
+
+.gjs-am-favourite:hover{
+  opacity: 1;
+}

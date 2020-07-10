@@ -1,0 +1,6 @@
+pagedesigner:
+  js:
+    resources/js/pagedesigner-favourite.js: {minified: false}
+  css:
+    component:
+      resources/css/pagedesigner-favourite.css: {minified: false}

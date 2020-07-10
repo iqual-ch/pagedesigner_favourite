@@ -1,0 +1,13 @@
+<?php
+
+/**
+ * @file
+ * Contains pagedesigner_favourite.module.
+ */
+
+/**
+ *
+ */
+function pagedesigner_favourite_page_attachments(array &$page) {
+  $page['#attached']['library'][] = 'pagedesigner_favourite/pagedesigner';
+}
