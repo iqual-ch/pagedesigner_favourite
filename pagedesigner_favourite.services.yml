@@ -1,0 +1,6 @@
+services:
+  pagedesigner_favourite.favourites_subscriber:
+    class: Drupal\pagedesigner_favourite\EventSubscriber\FavouritesSubscriber
+    arguments: ['@current_user', '@user.data']
+    tags:
+      - {name: event_subscriber}
