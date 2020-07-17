@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - hal
+    - pagedesigner_favourite
+    - user
+id: pagedesigner_favourite
+plugin_id: pagedesigner_favourite
+granularity: resource
+configuration:
+  methods:
+    - GET
+    - POST
+    - DELETE
+  formats:
+    - hal_json
+  authentication:
+    - cookie

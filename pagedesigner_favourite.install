@@ -1,0 +1,20 @@
+<?php
+
+/**
+ * @file
+ */
+
+/**
+ * Apply changes to configuration / environment on installation.
+ */
+function pagedesigner_favourite_install() {
+  $roles = user_roles(TRUE, "edit pagedesigner element entities");
+  if (count($roles) > 0) {
+    foreach ($roles as $role) {
+      $role->grantPermission('restful delete pagedesigner_favourite');
+      $role->grantPermission('restful post pagedesigner_favourite');
+      $role->grantPermission('restful get pagedesigner_favourite');
+      $role->save();
+    }
+  }
+}
