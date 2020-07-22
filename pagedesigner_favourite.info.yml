@@ -6,3 +6,6 @@ package: 'pagedesigner'
 
 dependencies:
   - pagedesigner:pagedesigner
+
+'interface translation project': pagedesigner_favourite
+'interface translation server pattern': 'modules/custom/pagedesigner_favourite/translations/pagedesigner_favourite-%language.po'
