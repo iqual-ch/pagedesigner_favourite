@@ -48,8 +48,10 @@ class FavouritesSubscriber implements EventSubscriberInterface {
    *   The event.
    */
   public function addAttachment(ElementEvent $event) {
-    $attachments = &$event->getData()[0];
-    $attachments['library'][] = 'pagedesigner_favourite/pagedesigner';
+    if (\Drupal::currentUser()->hasPermission('restful post pagedesigner_favourite')) {
+      $attachments = &$event->getData()[0];
+      $attachments['library'][] = 'pagedesigner_favourite/pagedesigner';
+    }
   }
 
   /**
