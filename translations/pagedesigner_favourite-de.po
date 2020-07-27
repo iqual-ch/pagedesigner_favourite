@@ -18,3 +18,6 @@ msgstr "Zu Favoriten hinzufügen"
 
 msgid "Remove from favourites"
 msgstr "Aus Favoriten entfernen"
+
+msgid "Favourites"
+msgstr "Favoriten"
