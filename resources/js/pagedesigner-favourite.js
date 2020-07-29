@@ -37,7 +37,7 @@
       // Move favourites to category
       $(document).on('pagedesigner-init-events', function (e, editor, options) {
         editor.on('run:open-blocks', () => {
-          editor.BlockManager.getCategories().each(ctg => ctg.set('open', true).set('order', 1));
+          editor.BlockManager.getCategories().each(ctg => ctg.set('order', 1));
           var favouriteBlocks = editor.BlockManager.getAll().filter(block => (block.get('additional').favourite));
           if (favouriteBlocks.length) {
             editor.BlockManager.getAll().filter(block => (block.get('additional').favourite)).forEach(function (block) {
