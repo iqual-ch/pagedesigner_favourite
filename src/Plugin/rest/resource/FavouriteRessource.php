@@ -10,6 +10,7 @@ use Drupal\rest\ResourceResponse;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Provides a resource to get view modes by entity and bundle.
@@ -121,6 +122,9 @@ class FavouriteRessource extends ResourceBase {
   /**
    * Responds to POST requests.
    *
+   * @param \Symfony\Component\HttpFoundation\Request $request
+   *   The request.
+   *
    * @return \Drupal\rest\ModifiedResourceResponse
    *   The HTTP response object.
    *
@@ -130,11 +134,12 @@ class FavouriteRessource extends ResourceBase {
    * @throws \Symfony\Component\HttpKernel\Exception\BadRequestHttpException
    *   If the request is malformed.
    */
-  public function post($request) {
-    if (empty($request['id'])) {
+  public function post(Request $request) {
+    $requestContent = json_decode($request->getContent(), TRUE);
+    if (empty($requestContent['id'])) {
       throw new BadRequestHttpException('The id is mandatory for the post requests.');
     }
-    $pattern = $request['id'];
+    $pattern = $requestContent['id'];
     $patterns = json_decode($this->userData->get(static::KEY, $this->currentUser->id(), static::KEY), TRUE);
     $patterns[$pattern] = $pattern;
     $this->userData->set(static::KEY, $this->currentUser->id(), static::KEY, json_encode($patterns));
