@@ -1,7 +1,7 @@
 {
-  "name": "iqual/pagedesigner_favourite",
+  "name": "drupal/pagedesigner_favourite",
   "description": "An extension for the pagedesigner to favourize components.",
-  "type": "drupal-custom-module",
+  "type": "drupal-module",
   "keywords": [
     "Drupal",
     "Editing"
